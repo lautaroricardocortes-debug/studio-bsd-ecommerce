@@ -3,7 +3,14 @@
 const technologies = [
   { name: "Next.js", icon: "▲" },
   { name: "React", icon: "⚛" },
-  { name: "WordPress", icon: "W" },
+  {
+    name: "Supabase",
+    icon: (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11.9 1.036c-.015-.986-1.26-1.41-1.874-.637L.764 12.05C.111 12.888.697 14.1 1.75 14.1h9.3l.149 8.864c.015.986 1.26 1.41 1.874.637l9.262-11.652c.653-.838.067-2.05-.986-2.05h-9.3L11.9 1.036z" fill="#3ECF8E"/>
+      </svg>
+    ),
+  },
   { name: "WooCommerce", icon: "🛒" },
   { name: "WebPay", icon: "💳" },
   { name: "Tailwind CSS", icon: "🎨" },
@@ -20,7 +27,7 @@ export function TechLogosSection() {
         </p>
       </div>
       <div className="relative">
-        <div className="flex animate-scroll-x gap-12 whitespace-nowrap">
+        <div className="tech-track flex animate-scroll-x gap-12 whitespace-nowrap">
           {items.map((tech, i) => (
             <div
               key={`${tech.name}-${i}`}

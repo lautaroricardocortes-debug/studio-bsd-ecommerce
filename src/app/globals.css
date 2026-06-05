@@ -347,6 +347,13 @@ h6 {
   animation: scroll-x 25s linear infinite;
 }
 
+@media (max-width: 768px) {
+  .carousel-track,
+  .tech-track {
+    animation-duration: 15s !important;
+  }
+}
+
 .animate-scroll-bounce {
   animation: scroll-bounce 2s ease-in-out infinite;
 }

@@ -75,6 +75,24 @@ export function ContactSection() {
     const validationErrors = validate(form);
     setErrors(validationErrors);
     if (Object.keys(validationErrors).length === 0) {
+      const nombre = form.name;
+      const email = form.email;
+      const telefono = form.phone;
+      const servicio =
+        services.find((s) => s.id === form.service)?.name ?? form.service;
+      const mensaje = form.message;
+
+      const emailSubject = `Nueva consulta - ${nombre}`;
+      const emailBody = `Nombre: ${nombre}
+Email: ${email}
+Teléfono: ${telefono}
+Servicio de interés: ${servicio}
+Mensaje: ${mensaje}`;
+
+      window.open(
+        `https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`,
+        "_blank",
+      );
       setSubmitted(true);
     }
   };
@@ -115,10 +133,10 @@ export function ContactSection() {
                 <div>
                   <p className="text-sm text-bsd-text-secondary">Email</p>
                   <a
-                    href="mailto:contacto@bsdcreaciones.cl"
-                    className="font-medium hover:text-bsd-primary"
+                    href="mailto:creacionesdigitalesbsd@gmail.com"
+                    style={{ color: "inherit", textDecoration: "none" }}
                   >
-                    contacto@bsdcreaciones.cl
+                    creacionesdigitalesbsd@gmail.com
                   </a>
                 </div>
               </div>
@@ -130,12 +148,12 @@ export function ContactSection() {
                 <div>
                   <p className="text-sm text-bsd-text-secondary">WhatsApp</p>
                   <a
-                    href="https://wa.me/56900000000"
+                    href="https://wa.me/56982452185?text=Hola%20BSD%20Creaciones%20Digitales%20%F0%9F%91%8B%20Estoy%20interesado%2Fa%20en%20sus%20servicios%20de%20desarrollo%20web%20y%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 rounded-lg bg-[#25D366] px-4 py-2 text-sm font-semibold text-white"
                   >
-                    +56 9 XXXX XXXX
+                    +56 9 8245 2185
                   </a>
                 </div>
               </div>
