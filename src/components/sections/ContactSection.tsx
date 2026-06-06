@@ -125,13 +125,20 @@ export function ContactSection() {
 
             <div className="relative flex h-full flex-col justify-end space-y-6 p-8">
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-bsd-primary/20 backdrop-blur-sm">
+                <a
+                  href="https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-bsd-primary/20 backdrop-blur-sm"
+                >
                   <Mail className="h-5 w-5 text-bsd-primary" />
-                </div>
+                </a>
                 <div>
                   <p className="text-sm text-bsd-text-secondary">Email</p>
                   <a
-                    href="mailto:creacionesdigitalesbsd@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{ color: "inherit", textDecoration: "none" }}
                   >
                     creacionesdigitalesbsd@gmail.com
