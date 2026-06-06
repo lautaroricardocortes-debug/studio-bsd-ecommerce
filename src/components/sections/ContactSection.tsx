@@ -131,15 +131,8 @@ export function ContactSection() {
                 <div>
                   <p className="text-sm text-bsd-text-secondary">Email</p>
                   <a
-                    href="https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com"
-                    target="_blank"
-                    style={{
-                      color: "inherit",
-                      textDecoration: "none",
-                      wordBreak: "break-all",
-                      fontSize: "clamp(0.75rem, 3vw, 0.95rem)",
-                      display: "block",
-                    }}
+                    href="mailto:creacionesdigitalesbsd@gmail.com"
+                    style={{ color: "inherit", textDecoration: "none" }}
                   >
                     creacionesdigitalesbsd@gmail.com
                   </a>
