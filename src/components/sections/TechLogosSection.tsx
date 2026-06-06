@@ -3,6 +3,10 @@
 const technologies = [
   { name: "Next.js", icon: "▲" },
   { name: "React", icon: "⚛" },
+  { name: "WordPress", icon: "W" },
+  { name: "WooCommerce", icon: "🛒" },
+  { name: "WebPay", icon: "💳" },
+  { name: "Tailwind CSS", icon: "🎨" },
   {
     name: "Supabase",
     icon: (
@@ -11,14 +15,12 @@ const technologies = [
       </svg>
     ),
   },
-  { name: "WooCommerce", icon: "🛒" },
-  { name: "WebPay", icon: "💳" },
-  { name: "Tailwind CSS", icon: "🎨" },
+  { name: "TypeScript", icon: "TS" },
+  { name: "Node.js", icon: "N" },
+  { name: "Vercel", icon: "V" },
 ];
 
 export function TechLogosSection() {
-  const items = [...technologies, ...technologies];
-
   return (
     <section className="overflow-hidden bg-bsd-bg-alt py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -26,17 +28,65 @@ export function TechLogosSection() {
           Tecnologías que utilizamos
         </p>
       </div>
-      <div className="relative">
-        <div className="tech-track flex animate-scroll-x gap-12 whitespace-nowrap">
-          {items.map((tech, i) => (
+      <div style={{ overflow: "hidden", width: "100%", position: "relative" }}>
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: "80px",
+            zIndex: 2,
+            background: "linear-gradient(to right, #0D0D12, transparent)",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            right: 0,
+            top: 0,
+            bottom: 0,
+            width: "80px",
+            zIndex: 2,
+            background: "linear-gradient(to left, #0D0D12, transparent)",
+            pointerEvents: "none",
+          }}
+        />
+
+        <div
+          className="tech-marquee-track"
+          style={{ display: "flex", width: "max-content" }}
+        >
+          {[
+            ...technologies,
+            ...technologies,
+            ...technologies,
+            ...technologies,
+          ].map((tech, i) => (
             <div
-              key={`${tech.name}-${i}`}
-              className="flex shrink-0 items-center gap-3 rounded-full border border-bsd-border bg-bsd-card/50 px-6 py-3"
+              key={i}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "10px 24px",
+                margin: "0 8px",
+                background: "rgba(255,255,255,0.04)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                borderRadius: "50px",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}
             >
-              <span className="text-lg text-bsd-text-secondary/60">
-                {tech.icon}
-              </span>
-              <span className="text-sm font-medium text-bsd-text-secondary">
+              {tech.icon}
+              <span
+                style={{
+                  color: "rgba(255,255,255,0.6)",
+                  fontSize: "0.85rem",
+                  fontWeight: 500,
+                }}
+              >
                 {tech.name}
               </span>
             </div>

@@ -134,7 +134,11 @@ export function Navbar() {
                 </button>
               </div>
               <div className="flex flex-1 flex-col gap-1 p-4">
-                {navLinks.map((link, i) => (
+                {[
+                  ...navLinks.slice(0, 5),
+                  { href: "#faq", label: "FAQ" },
+                  navLinks[5],
+                ].map((link, i) => (
                   <motion.a
                     key={link.href}
                     href={link.href}

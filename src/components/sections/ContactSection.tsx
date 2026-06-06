@@ -82,15 +82,13 @@ export function ContactSection() {
         services.find((s) => s.id === form.service)?.name ?? form.service;
       const mensaje = form.message;
 
-      const emailSubject = `Nueva consulta - ${nombre}`;
-      const emailBody = `Nombre: ${nombre}
-Email: ${email}
-Teléfono: ${telefono}
-Servicio de interés: ${servicio}
-Mensaje: ${mensaje}`;
+      const subject = encodeURIComponent(`Nueva consulta - ${nombre}`);
+      const body = encodeURIComponent(
+        `Nombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nServicio de interés: ${servicio}\nMensaje: ${mensaje}`,
+      );
 
       window.open(
-        `https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`,
+        `https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com&su=${subject}&body=${body}`,
         "_blank",
       );
       setSubmitted(true);
@@ -133,8 +131,15 @@ Mensaje: ${mensaje}`;
                 <div>
                   <p className="text-sm text-bsd-text-secondary">Email</p>
                   <a
-                    href="mailto:creacionesdigitalesbsd@gmail.com"
-                    style={{ color: "inherit", textDecoration: "none" }}
+                    href="https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com"
+                    target="_blank"
+                    style={{
+                      color: "inherit",
+                      textDecoration: "none",
+                      wordBreak: "break-all",
+                      fontSize: "clamp(0.75rem, 3vw, 0.95rem)",
+                      display: "block",
+                    }}
                   >
                     creacionesdigitalesbsd@gmail.com
                   </a>
