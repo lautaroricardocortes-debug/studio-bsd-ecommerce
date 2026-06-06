@@ -87,10 +87,7 @@ export function ContactSection() {
         `Nombre: ${nombre}\nEmail: ${email}\nTeléfono: ${telefono}\nServicio de interés: ${servicio}\nMensaje: ${mensaje}`,
       );
 
-      window.open(
-        `https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com&su=${subject}&body=${body}`,
-        "_blank",
-      );
+      window.location.href = `mailto:creacionesdigitalesbsd@gmail.com?subject=${subject}&body=${body}`;
       setSubmitted(true);
     }
   };

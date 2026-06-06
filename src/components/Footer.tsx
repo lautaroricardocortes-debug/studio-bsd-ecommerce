@@ -43,7 +43,7 @@ const socialLinks = [
     label: "Instagram",
   },
   {
-    href: "https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com",
+    href: "mailto:creacionesdigitalesbsd@gmail.com",
     icon: GmailIcon,
     label: "Gmail",
   },
@@ -117,8 +117,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-bsd-text-secondary">
               <li>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&to=creacionesdigitalesbsd@gmail.com"
-                  target="_blank"
+                  href="mailto:creacionesdigitalesbsd@gmail.com"
                   style={{ color: "inherit", textDecoration: "none" }}
                 >
                   creacionesdigitalesbsd@gmail.com
